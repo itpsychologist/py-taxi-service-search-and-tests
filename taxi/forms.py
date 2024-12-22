@@ -37,7 +37,7 @@ class ManufacturerSearchForm(forms.Form):
         label="",
         widget=forms.TextInput(
             attrs={
-                    "placeholder": "Search name",
+                "placeholder": "Search name",
             }
         )
     )
@@ -50,7 +50,7 @@ class DriverSearchForm(forms.Form):
         label="",
         widget=forms.TextInput(
             attrs={
-                    "placeholder": "Search driver",
+                "placeholder": "Search driver",
             }
         )
     )
@@ -89,6 +89,3 @@ def validate_license_number(
         raise ValidationError("Last 5 characters should be digits")
 
     return license_number
-
-
-

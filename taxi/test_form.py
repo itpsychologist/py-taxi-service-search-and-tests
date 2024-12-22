@@ -19,4 +19,7 @@ class CarSearchFormTestCase(TestCase):
     def test_form_has_placeholder(self):
         form = CarSearchForm()
         self.assertIn("placeholder", form["model"].field.widget.attrs)
-        self.assertEqual(form["model"].field.widget.attrs["placeholder"], "Search car")
+        self.assertEqual(
+            form["model"].field.widget.attrs["placeholder"],
+            "Search car"
+        )
