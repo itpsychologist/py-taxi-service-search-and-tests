@@ -17,6 +17,45 @@ class CarForm(forms.ModelForm):
         fields = "__all__"
 
 
+class CarSearchForm(forms.Form):
+    model = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Search car",
+            }
+        )
+    )
+
+
+class ManufacturerSearchForm(forms.Form):
+    name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                    "placeholder": "Search name",
+            }
+        )
+    )
+
+
+class DriverSearchForm(forms.Form):
+    username = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                    "placeholder": "Search driver",
+            }
+        )
+    )
+
+
 class DriverCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = Driver
@@ -50,3 +89,6 @@ def validate_license_number(
         raise ValidationError("Last 5 characters should be digits")
 
     return license_number
+
+
+
