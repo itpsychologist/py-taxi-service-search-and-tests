@@ -107,5 +107,5 @@ class CarListViewTestCase(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(
             response,
-            f"/accounts/login/?next={reverse("taxi:car-list")}"
+            f'/accounts/login/?next={reverse("taxi:car-list")}'
         )
